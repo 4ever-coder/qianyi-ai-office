@@ -56,4 +56,40 @@
   --z-overlay:  300;
   --z-modal:    400;
   --z-toast:    500;
+
+  /* ── Easing ── */
+  --ease-snap:   cubic-bezier(0.2, 0, 0, 1);
+  --ease-smooth: cubic-bezier(0.3, 0, 0, 1);
+}
+
+/* ── Animated light-field properties (GPU-accelerated via @property) ── */
+@property --orb-a-x {
+  syntax: '<percentage>';
+  initial-value: 18%;
+  inherits: false;
+}
+@property --orb-a-y {
+  syntax: '<percentage>';
+  initial-value: 28%;
+  inherits: false;
+}
+@property --orb-b-x {
+  syntax: '<percentage>';
+  initial-value: 72%;
+  inherits: false;
+}
+@property --orb-b-y {
+  syntax: '<percentage>';
+  initial-value: 55%;
+  inherits: false;
+}
+@property --orb-c-x {
+  syntax: '<percentage>';
+  initial-value: 45%;
+  inherits: false;
+}
+@property --orb-c-y {
+  syntax: '<percentage>';
+  initial-value: 75%;
+  inherits: false;
 }

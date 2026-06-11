@@ -79,7 +79,8 @@
       "Bash(sed -i '357s/.*/    .prob-item { max-width: none; }/' src/pages/index.astro)",
       "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":29,\"p0_count\":0,\"p1_count\":0}' node \"C:/Users/Dream/.claude/skills/impeccable/scripts/critique-storage.mjs\" write src-pages-index-astro .impeccable/critique/tmp-body.md)",
       "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":38,\"p0_count\":0,\"p1_count\":0}' node \"C:/Users/Dream/.claude/skills/impeccable/scripts/critique-storage.mjs\" write src-pages-index-astro .impeccable/critique/tmp-body.md)",
-      "Bash(rm .impeccable/critique/tmp-body.md)"
+      "Bash(rm .impeccable/critique/tmp-body.md)",
+      "Bash(npx playwright *)"
     ]
   }
 }

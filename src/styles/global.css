@@ -45,7 +45,7 @@ p, li {
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color 120ms var(--ease-smooth);
 }
 
 a:hover {
@@ -100,7 +100,7 @@ button {
   font-size: var(--text-small);
   text-decoration: none;
   transform: translateY(-200%);
-  transition: transform 150ms ease;
+  transition: transform 120ms var(--ease-smooth);
 }
 .skip-link:focus {
   transform: translateY(0);
@@ -108,10 +108,103 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
   html { scroll-behavior: auto; }
+
+  /* Only pause looping decorative animations, not interaction transitions */
+  .ambient-light { animation: none; }
+
+  /* Reveal elements: show immediately, no transition */
+  .reveal-child,
+  .reveal-fade-up,
+  .reveal-blur-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Scroll reveal system ── */
+.reveal-child {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms var(--ease-snap),
+              transform 220ms var(--ease-snap);
+}
+.reveal-child.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms var(--ease-snap),
+              transform 220ms var(--ease-snap);
+}
+.reveal-fade-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-blur-in {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms var(--ease-snap),
+              transform 220ms var(--ease-snap);
+}
+.reveal-blur-in.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Ambient light field ── */
+.ambient-light {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 75% 65% at var(--orb-a-x) var(--orb-a-y), oklch(0.520 0.135 140 / 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 55% 70% at var(--orb-b-x) var(--orb-b-y), oklch(0.550 0.125 45 / 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 55% at var(--orb-c-x) var(--orb-c-y), oklch(0.520 0.135 140 / 0.08) 0%, transparent 50%);
+  animation: drift-a 22s ease-in-out infinite,
+             drift-b 27s ease-in-out infinite,
+             drift-c 19s ease-in-out infinite;
+}
+
+.ambient-noise {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.038;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-light { animation: none; }
+}
+
+/* ── Light-field drift keyframes ── */
+@keyframes drift-a {
+  0%, 100% { --orb-a-x: 18%; --orb-a-y: 28%; }
+  20%      { --orb-a-x: 65%; --orb-a-y: 20%; }
+  42%      { --orb-a-x: 78%; --orb-a-y: 58%; }
+  68%      { --orb-a-x: 32%; --orb-a-y: 72%; }
+  84%      { --orb-a-x: 12%; --orb-a-y: 40%; }
+}
+
+@keyframes drift-b {
+  0%, 100% { --orb-b-x: 72%; --orb-b-y: 55%; }
+  25%      { --orb-b-x: 35%; --orb-b-y: 75%; }
+  52%      { --orb-b-x: 20%; --orb-b-y: 30%; }
+  76%      { --orb-b-x: 80%; --orb-b-y: 42%; }
+}
+
+@keyframes drift-c {
+  0%, 100% { --orb-c-x: 45%; --orb-c-y: 75%; }
+  30%      { --orb-c-x: 80%; --orb-c-y: 55%; }
+  58%      { --orb-c-x: 55%; --orb-c-y: 30%; }
+  82%      { --orb-c-x: 25%; --orb-c-y: 68%; }
 }
