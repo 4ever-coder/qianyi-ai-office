@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1a1f1c"/>
+  <rect x="80" y="80" width="1040" height="470" rx="16" fill="#212824"/>
+  <rect x="80" y="80" width="8" height="470" rx="4" fill="#2d9c54"/>
+  <text x="120" y="240" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="#ebecea">千忆知答</text>
+  <text x="120" y="320" font-family="system-ui,sans-serif" font-size="32" fill="#8a948d">让企业资料变成可追溯的答案</text>
+  <text x="120" y="420" font-family="system-ui,sans-serif" font-size="24" fill="#2d9c54" font-weight="600">千忆 AI</text>
+</svg>

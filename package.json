@@ -1,0 +1,14 @@
+{
+  "name": "qianyi-ai-office",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.8",
+    "astro": "^5.18.2"
+  }
+}

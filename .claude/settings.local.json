@@ -1,7 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "WebFetch(domain:localhost)",
+      "Bash(start *)",
+      "Bash(curl *)",
+      "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":23,\"p0_count\":2,\"p1_count\":2}' node *)",
+      "Bash(sort -t- -k3 -n)",
+      "Bash(sed -i '122s/<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"您的称呼\" \\\\/>/<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"您的称呼\" required autocomplete=\"name\" \\\\/>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(sed -i '123s/<input type=\"text\" id=\"team\" name=\"team\" placeholder=\"团队或工作室名称\" \\\\/>/<input type=\"text\" id=\"team\" name=\"team\" placeholder=\"团队或工作室名称\" required autocomplete=\"organization\" \\\\/>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(sed -i '124s/<input type=\"text\" id=\"contact-info\" name=\"contact\" placeholder=\"微信、邮箱或手机号\" \\\\/>/<input type=\"text\" id=\"contact-info\" name=\"contact\" placeholder=\"微信、邮箱或手机号\" required autocomplete=\"email\" \\\\/>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(sed -i '122s/<label for=\"name\">称呼<\\\\/label>/<label for=\"name\">称呼 <span class=\"label-req\" aria-label=\"必填\">*<\\\\/span><\\\\/label>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(sed -i '123s/<label for=\"team\">团队 \\\\/ 工作室<\\\\/label>/<label for=\"team\">团队 \\\\/ 工作室 <span class=\"label-req\" aria-label=\"必填\">*<\\\\/span><\\\\/label>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(sed -i '124s/<label for=\"contact-info\">联系方式<\\\\/label>/<label for=\"contact-info\">联系方式 <span class=\"label-req\" aria-label=\"必填\">*<\\\\/span><\\\\/label>/' \"E:/Agent/qianyi-ai-office/src/pages/index.astro\")",
+      "Bash(python3 *)",
+      "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":27,\"p0_count\":0,\"p1_count\":0}' node *)",
+      "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":28,\"p0_count\":0,\"p1_count\":0}' node \"C:/Users/Dream/.claude/skills/impeccable/scripts/critique-storage.mjs\" write \"src-pages-index-astro\" \"C:/Users/Dream/AppData/Local/Temp/critique-body-3.md\")",
+      "Bash(IMPECCABLE_CRITIQUE_META='{\"target\":\"src/pages/index.astro\",\"total_score\":30,\"p0_count\":0,\"p1_count\":0}' node \"C:/Users/Dream/.claude/skills/impeccable/scripts/critique-storage.mjs\" write \"src-pages-index-astro\" \"C:/Users/Dream/AppData/Local/Temp/critique-final.md\")",
+      "WebFetch(domain:linear.app)"
     ]
   }
 }
