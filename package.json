@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
+    "aos": "^2.3.4",
     "astro": "^5.18.2"
   }
 }

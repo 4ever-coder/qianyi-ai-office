@@ -2,41 +2,37 @@
 
 ## Theme
 
-Dark mode. Near-black background with subtle depth — engineering precision and focus. Brand carried by luminous green accent, warm amber highlights, and precise typography against dark surfaces. Atmospheric ambient glow at page edges for depth without distraction.
+Light mode. Pure white background with generous, deliberate whitespace — clarity and readability first. Brand identity carried by primary green accent, warm amber highlights, and precise typography. Linear-inspired layout: wide, confident sections with breathing room, content never feels cramped.
 
 ## Color
 
-Strategy: **Restrained** — dark surfaces + luminous accents ≤10%. Color is light on dark; brand personality lives in the precision, not in decoration.
+Strategy: **Restrained** — tinted neutrals + one primary accent at ≤10% of surface. Brand personality lives in the green and in the precision of the layout, not in decoration.
 
 | Token | OKLCH | Role |
 |---|---|---|
-| `--color-bg` | `oklch(0.130 0.003 155)` | Page background — near-black with whisper of green |
-| `--color-surface` | `oklch(0.170 0.003 155)` | Cards, panels, elevated sections — slightly lifted |
-| `--color-ink` | `oklch(0.930 0.002 155)` | Body text — near-white, slightly warm |
-| `--color-muted` | `oklch(0.580 0.005 155)` | Secondary text, captions, meta — ≥4.5:1 vs bg |
-| `--color-primary` | `oklch(0.620 0.160 150)` | Brand green — luminous on dark, buttons, brand mark |
-| `--color-primary-hover` | `oklch(0.680 0.155 150)` | Hover state — lighter |
-| `--color-primary-text` | `oklch(0.120 0.003 155)` | Text on primary fills — near-black |
-| `--color-accent` | `oklch(0.660 0.150 60)` | Warm amber — luminous on dark, badges, links, highlights |
-| `--color-accent-text` | `oklch(0.120 0.003 155)` | Text on accent fills — near-black |
-| `--color-border` | `oklch(0.220 0.003 155)` | Subtle borders, dividers — low contrast against dark bg |
-| `--color-error` | `oklch(0.580 0.180 25)` | Error states, destructive actions |
+| `--color-bg` | `oklch(1.000 0.000 0)` | Page background — pure white |
+| `--color-surface` | `oklch(0.965 0.003 140)` | Cards, panels, elevated sections — barely tinted toward green |
+| `--color-ink` | `oklch(0.120 0.005 140)` | Body text — near-black with whisper of brand hue |
+| `--color-muted` | `oklch(0.440 0.008 140)` | Secondary text, captions, meta — ≥4.5:1 vs bg |
+| `--color-primary` | `oklch(0.520 0.135 140)` | Brand green — primary buttons, brand mark, key accents |
+| `--color-primary-hover` | `oklch(0.460 0.135 140)` | Hover state — darker |
+| `--color-primary-text` | `oklch(1.000 0.000 0)` | Text on primary fills — white |
+| `--color-accent` | `oklch(0.550 0.125 45)` | Warm amber — highlights, badges, links, CTA accents |
+| `--color-accent-text` | `oklch(1.000 0.000 0)` | Text on accent fills — white |
+| `--color-border` | `oklch(0.900 0.005 140)` | Subtle borders, dividers |
+| `--color-error` | `oklch(0.500 0.170 25)` | Error states, destructive actions |
 
 ### Usage ratios
 
 - Primary green: ~5-10% — buttons, brand mark, step numbers, focus rings
 - Accent amber: ~2-5% — badges, inline links, scenario tags, highlights
-- Surface elevation: alternating sections use `--color-surface` for subtle depth layering
-
-### Atmosphere
-
-- Body has a fixed `::before` pseudo-element with two subtle radial gradients: a green glow at top-center (4% opacity) and an amber glow at bottom-right (3% opacity). These provide atmospheric depth without distracting from content.
+- Surface tint: alternating sections use `--color-surface` for gentle depth layering
 
 ### Contrast
 
 - Body text (`--color-ink`) vs bg: ≥14:1
 - Muted text (`--color-muted`) vs bg: ≥4.5:1 (WCAG AA)
-- Near-black text on primary/accent fills: ≥10:1
+- White text on primary/accent fills: readable
 - All interactive elements meet WCAG AA minimums
 
 ## Typography
@@ -105,11 +101,11 @@ Minimal energy. Trust and clarity over spectacle.
 
 ## Components
 
-- **Buttons**: Solid primary/accent fill with near-black text, ghost secondary with hairline border. 48px touch target minimum on mobile. Hover lift 1px.
+- **Buttons**: Solid primary fill with white text, ghost secondary with subtle border. 48px touch target minimum on mobile. Hover lift 1px.
 - **Links**: Accent or primary color, underline on hover.
-- **Cards**: Dark surface with hairline border. No nested cards.
-- **Badges**: Primary or accent fill with near-black text. Pill shape. Subtle glow on hover.
-- **Forms**: Dark bg inputs with subtle border, focus ring using primary color glow. Clear error states with `--color-error`.
+- **Cards**: White surface with subtle border. No nested cards.
+- **Badges**: Primary or accent fill with white text. Pill shape. Subtle glow on hover.
+- **Forms**: Clean border inputs on white bg, focus ring using primary color glow. Clear error states with `--color-error`.
 
 ## Breakpoints
 
@@ -124,4 +120,4 @@ Mobile-first. Grids use `repeat(auto-fit, minmax(280px, 1fr))` for breakpoint-fr
 
 ## Imagery
 
-Product screenshots preferred over stock photography. Screenshots should show the actual product UI on dark background — knowledge base query, answer with citations, document management. Clean device frames or inline screenshots with subtle ambient glow. If stock is needed, use architectural/workspace imagery with controlled, directional lighting — precision and depth in the physical world.
+Product screenshots preferred over stock photography. Screenshots should show the actual product UI — knowledge base query, answer with citations, document management. Clean device frames or inline screenshots with subtle shadows. If stock is needed, use architectural/workspace imagery with natural light — engineering precision in the physical world.

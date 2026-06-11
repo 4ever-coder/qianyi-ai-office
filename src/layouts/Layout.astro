@@ -5,6 +5,7 @@ export interface Props {
 }
 
 import '@fontsource-variable/manrope';
+import 'aos/dist/aos.css';
 
 const { title, description } = Astro.props;
 ---
@@ -25,6 +26,7 @@ const { title, description } = Astro.props;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳转到主要内容</a>
     <slot />
   </body>
 </html>
