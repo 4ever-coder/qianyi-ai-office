@@ -28,7 +28,9 @@ import Layout from '../layouts/Layout.astro';
           <h1 id="hero-headline">千忆知答，让企业资料变成<em>可追溯的答案</em></h1>
           <p class="hero-sub" id="hero-sub">把制度文档、产品手册、客服 FAQ、培训资料整理成可提问的知识库，让团队成员快速获得带来源的可靠答案。</p>
           <div class="hero-actions" id="hero-actions">
+
             <a href="#contact" class="btn btn-primary">加微信预约演示</a>
+
             <a href="#contact" class="btn btn-ghost">申请体验版本</a>
           </div>
           <p class="hero-note" id="hero-note">资料准备完整后，可快速搭建体验版本</p>
@@ -59,7 +61,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="problems" id="problems" aria-labelledby="problems-heading">
       <div class="container">
         <h2 id="problems-heading" class="reveal-blur-in">它主要解决这三类问题</h2>
-        <div class="problems-row reveal-fade-up reveal-children">
+        <div class="problems-row reveal-fade-up reveal-children" data-stagger="30">
           <div class="prob-item reveal-child">
             <h3>资料分散</h3>
             <p>文档散在共享盘、邮件附件、聊天记录里，每次找资料都像翻箱倒柜。</p>
@@ -81,7 +83,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <h2 id="how-heading" class="reveal-blur-in">从资料到答案，很简单</h2>
         <div class="how-grid">
-          <div class="how-steps reveal-fade-up reveal-children">
+          <div class="how-steps reveal-fade-up reveal-children" data-stagger="18">
             <div class="hs-item reveal-child"><span class="hs-num">1</span><strong>上传资料</strong><span>支持 PDF、Word、Markdown、TXT 等常见格式，可批量导入已有文档库。</span></div>
             <div class="hs-item reveal-child"><span class="hs-num">2</span><strong>直接提问</strong><span>像问同事一样用日常语言提问，一次提问同时检索所有关联文档。</span></div>
             <div class="hs-item reveal-child"><span class="hs-num">3</span><strong>查看来源</strong><span>每条回答标注文档名称和章节位置，点击即可跳转到原文核对。</span></div>
@@ -104,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="trust-section" aria-labelledby="trust-heading">
       <div class="container">
         <h2 id="trust-heading" class="reveal-blur-in">专注知识库问答的工作室</h2>
-        <div class="trust-list reveal-fade-up reveal-children">
+        <div class="trust-list reveal-fade-up reveal-children" data-stagger="35">
           <div class="trust-item reveal-child">
             <h4>聚焦一个方向</h4>
             <p>只做知识库问答这一件事，不做通用 chatbot、不做大而全的平台。你的资料整理和问答效果是我们唯一关心的交付质量。</p>
@@ -124,8 +126,8 @@ import Layout from '../layouts/Layout.astro';
     <!-- ═══ 4. FAQ ═══ -->
     <section class="faq-section" id="faq" aria-labelledby="faq-heading">
       <div class="container">
-        <h2 id="faq-heading" class="reveal-blur-in">常见问题</h2>
-        <div class="faq-list reveal-fade-up reveal-children">
+        <h2 id="faq-heading" class="reveal-blur-in">常见问题 <button class="faq-toggle-all" id="faq-toggle-all" type="button">全部展开</button></h2>
+        <div class="faq-list reveal-fade-up reveal-children" data-stagger="15">
           <div class="faq-group">
             <h3 class="faq-group-label">产品功能</h3>
             <details class="faq-item reveal-child"><summary>支持哪些文档格式？</summary><p>支持 PDF、Word、Markdown、HTML、TXT 等常见格式，可从本地上传。后续可扩展对接飞书文档、Confluence 等知识源。</p></details>
@@ -146,8 +148,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <h2 id="contact-heading" class="reveal-blur-in">想看看你的资料能不能做成知识库？</h2>
-        <p class="contact-desc reveal-blur-in">可以先简单沟通资料类型和使用场景，再判断是否适合搭建体验版本。</p>
-        <div class="contact-grid reveal-fade-up reveal-children">
+        <div class="contact-grid reveal-fade-up reveal-children" data-stagger="40">
           <div class="contact-wechat reveal-child">
             <span class="cw-label">微信</span>
             <span class="cw-value">qianyi-ai</span>
@@ -175,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="form-row">
               <label for="message">需求说明 <span class="label-opt">选填</span></label>
               <textarea id="message" name="message" rows="2" placeholder="简单描述团队规模和使用场景" maxlength="500" aria-describedby="message-hint"></textarea>
-              <span class="form-hint" id="message-hint">告诉我们你的团队规模和想用知识库解决的业务场景</span>
+              <span class="form-hint" id="message-hint">告诉我们你的团队规模和想用知识库解决的业务场景 <span class="char-count" id="message-count">0/500</span></span>
               <span class="form-err" id="message-err" role="alert"></span>
             </div>
             <button type="submit" class="btn btn-primary btn-full">提交预约</button>
@@ -205,12 +206,12 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   /* ═══ Shared ═══ */
-  .container { max-width: 1160px; margin: 0 auto; padding: 0 var(--space-8); }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 var(--space-8); }
   h2 { font-size: var(--text-h2); font-weight: 600; letter-spacing: -0.02em; color: var(--color-ink); text-align: center; }
 
   /* ═══ Nav ═══ */
   .nav { position: sticky; top: 0; z-index: var(--z-sticky); background: oklch(1 0 0 / 0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); }
-  .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 var(--space-8); height: 52px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 var(--space-8); height: 52px; display: flex; align-items: center; justify-content: space-between; }
   .logo { display: flex; align-items: center; gap: var(--space-2); text-decoration: none; color: var(--color-ink); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
   .logo-mark { width: 22px; height: 22px; border-radius: 4px; background: var(--color-primary); }
   .nav-toggle { display: none; }
@@ -300,22 +301,22 @@ import Layout from '../layouts/Layout.astro';
   .mock-note { font-size: var(--text-xs); color: var(--color-muted); }
 
   /* ═══ 2. Problems ═══ */
-  .problems { padding: 0 0 var(--section-pad); }
-  .problems h2 { margin-bottom: var(--space-8); }
-  .problems-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); max-width: 860px; margin: 0 auto; }
+  .problems { padding: var(--section-pad) 0; }
+  .problems h2 { margin-bottom: var(--space-10); }
+  .problems-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); max-width: 960px; margin: 0 auto; }
   .prob-item h3 { font-size: var(--text-h4); font-weight: 600; color: var(--color-primary); margin-bottom: var(--space-2); }
   .prob-item p { font-size: var(--text-small); color: var(--color-muted); line-height: 1.6; max-width: 30ch; }
 
   /* ═══ 3. How + Scenarios ═══ */
   .how-section { padding: var(--section-pad) 0; background: var(--color-surface); }
   .how-section h2 { margin-bottom: var(--space-10); }
-  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: start; max-width: 860px; margin: 0 auto; }
+  .how-grid { display: flex; flex-direction: column; gap: var(--space-8); max-width: 760px; margin: 0 auto; }
   .how-steps { display: flex; flex-direction: column; gap: var(--space-3); }
   .hs-item { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
   .hs-item strong { font-size: var(--text-small); font-weight: 600; color: var(--color-ink); white-space: nowrap; }
   .hs-item span { font-size: var(--text-xs); color: var(--color-muted); }
-  .how-scenarios { padding-top: var(--space-2); }
-  .hs-label { font-size: var(--text-small); font-weight: 600; color: var(--color-ink); margin-bottom: var(--space-4); }
+  .how-scenarios { display: flex; align-items: baseline; gap: var(--space-5); flex-wrap: wrap; }
+  .hs-label { font-size: var(--text-small); font-weight: 600; color: var(--color-ink); white-space: nowrap; }
   .how-scenarios ul { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
   .how-scenarios li { font-size: var(--text-xs); color: var(--color-ink); padding: 4px var(--space-3); background: oklch(0.550 0.125 45 / 0.08); border: 1px solid oklch(0.550 0.125 45 / 0.18); border-radius: var(--radius-full); }
 
@@ -323,15 +324,18 @@ import Layout from '../layouts/Layout.astro';
   /* ═══ 3.5 Trust ═══ */
   .trust-section { padding: var(--section-pad) 0; background: var(--color-bg); text-align: center; }
   .trust-section h2 { margin-bottom: var(--space-10); }
-  .trust-list { display: flex; flex-direction: column; gap: var(--space-6); max-width: 680px; margin: 0 auto; text-align: left; }
+  .trust-list { display: flex; flex-direction: column; gap: var(--space-6); max-width: 760px; margin: 0 auto; text-align: left; }
   .trust-item { padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-border); }
   .trust-item:last-child { border-bottom: none; padding-bottom: 0; }
   .trust-item h4 { font-size: var(--text-body); font-weight: 600; color: var(--color-primary); margin-bottom: var(--space-2); }
   .trust-item p { font-size: var(--text-small); color: var(--color-muted); line-height: 1.6; }
   /* ═══ 4. FAQ ═══ */
-  .faq-section { padding: var(--section-pad) 0; }
-  .faq-section h2 { margin-bottom: var(--space-8); }
-  .faq-list { display: flex; flex-direction: column; gap: var(--space-6); max-width: 780px; margin: 0 auto; }
+  .faq-section { padding: var(--section-pad) 0; background: var(--color-surface); }
+  .faq-section h2 { margin-bottom: var(--space-10); }
+  .faq-list { display: flex; flex-direction: column; gap: var(--space-6); max-width: 860px; margin: 0 auto; }
+  .faq-toggle-all { display: inline-block; margin-left: var(--space-4); font-size: var(--text-xs); font-weight: 500; color: var(--color-primary); background: none; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2px var(--space-3); cursor: pointer; transition: border-color 120ms var(--ease-smooth), color 120ms var(--ease-smooth); vertical-align: middle; }
+  .faq-toggle-all:hover { border-color: var(--color-primary); }
+
   .faq-group-label { font-size: var(--text-xs); font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1); padding-left: 0; }
   .faq-group { display: flex; flex-direction: column; }
   .faq-item { border-bottom: 1px solid var(--color-border); }
@@ -346,11 +350,10 @@ import Layout from '../layouts/Layout.astro';
   .faq-item > p { padding: 0 0 var(--space-4); color: var(--color-muted); line-height: 1.6; font-size: var(--text-small); max-width: none; }
 
   /* ═══ 5. Contact ═══ */
-  .contact-section { padding: var(--section-pad) 0; background: var(--color-surface); text-align: center; }
-  .contact-section h2 { margin-bottom: var(--space-3); }
-  .contact-desc { font-size: 1rem; color: var(--color-muted); line-height: 1.6; margin-bottom: var(--space-8); }
-  .contact-grid { display: grid; grid-template-columns: 260px 1fr; gap: var(--space-12); max-width: 860px; margin: 0 auto; text-align: left; }
-  .contact-wechat { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); height: fit-content; }
+  .contact-section { padding: var(--section-pad) 0; background: var(--color-bg); text-align: center; }
+  .contact-section h2 { margin-bottom: var(--space-10); }
+  .contact-grid { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-12); max-width: 960px; margin: 0 auto; text-align: left; }
+  .contact-wechat { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-6) var(--space-5); background: oklch(0.550 0.125 45 / 0.06); border: 1px solid oklch(0.550 0.125 45 / 0.2); border-radius: var(--radius-md); height: fit-content; }
   .cw-label { font-size: var(--text-xs); font-weight: 600; color: oklch(0.420 0.120 45); text-transform: uppercase; letter-spacing: 0.06em; }
   .cw-value { font-size: var(--text-body); font-weight: 600; color: var(--color-ink); }
   .cw-hint { font-size: var(--text-xs); color: var(--color-muted); }
@@ -364,7 +367,7 @@ import Layout from '../layouts/Layout.astro';
   .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 2px oklch(0.520 0.135 140 / 0.10); }
   .form-row ::placeholder { color: oklch(0.435 0.006 140); }
   .form-hint { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
-  .form-row.is-error .form-hint { display: none; }
+  .char-count { color: var(--color-muted); }
   .form-err { display: none; font-size: var(--text-xs); color: var(--color-error); margin-top: var(--space-1); }
   .form-row.is-error .form-err { display: block; }
   .form-row.is-error input,
@@ -383,7 +386,7 @@ import Layout from '../layouts/Layout.astro';
   .footer-brand strong { font-weight: 700; color: var(--color-ink); font-size: var(--text-body); }
   .footer-brand span { font-size: var(--text-xs); }
   .footer-links { display: flex; gap: var(--space-5); }
-  .footer-links a { color: var(--color-muted); text-decoration: none; font-size: var(--text-xs); }
+  .footer-links a { color: var(--color-muted); text-decoration: none; font-size: var(--text-xs); transition: color 120ms var(--ease-smooth); }
   .footer-links a:hover { color: var(--color-ink); text-decoration: none; }
   .footer-copy { width: 100%; padding-top: var(--space-3); margin-top: var(--space-3); border-top: 1px solid var(--color-border); font-size: var(--text-xs); }
 
@@ -416,7 +419,7 @@ import Layout from '../layouts/Layout.astro';
   /* ═══ Responsive ═══ */
   @media (max-width: 900px) {
     .hero-text h1 { font-size: clamp(1.55rem, 4vw, 1.9rem); }
-    .how-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+    .how-grid { gap: var(--space-6); }
     .problems-row { grid-template-columns: 1fr; gap: var(--space-6); }
   }
   @media (max-width: 640px) {
@@ -490,17 +493,88 @@ import Layout from '../layouts/Layout.astro';
         el.addEventListener('input', function() { if (el.closest('.form-row').classList.contains('is-error')) validateField(el); });
       });
 
+      /* ── Smart contact validation ── */
+      var contactField = document.getElementById('contact-info');
+      if (contactField) {
+        contactField.addEventListener('blur', function() {
+          var v = contactField.value.trim();
+          if (!v) return;
+          var isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+          var isPhone = /^[\d\-+() ]{7,}$/.test(v);
+          var row = contactField.closest('.form-row');
+          var hint = document.getElementById('contact-hint');
+          if (isEmail) { if (hint) hint.textContent = '已识别为邮箱，我们会通过邮件与你沟通演示安排'; row.classList.remove('is-error'); }
+          else if (isPhone) { if (hint) hint.textContent = '已识别为手机号，我们会通过电话与你沟通演示安排'; row.classList.remove('is-error'); }
+        });
+      }
+
+      /* ── Message char counter ── */
+      var msgField = document.getElementById('message');
+      var msgCount = document.getElementById('message-count');
+      if (msgField && msgCount) {
+        msgField.addEventListener('input', function() {
+          msgCount.textContent = msgField.value.length + '/500';
+        });
+      }
+
+      /* ── Form draft autosave ── */
+      var draftKey = 'qianyi-form-draft';
+      function saveDraft() {
+        var draft = {};
+        ['name','team','contact-info','message'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) draft[id] = el.value;
+        });
+        try { localStorage.setItem(draftKey, JSON.stringify(draft)); } catch(e) {}
+      }
+      function loadDraft() {
+        try {
+          var raw = localStorage.getItem(draftKey);
+          if (raw) { var d = JSON.parse(raw); Object.keys(d).forEach(function(k) { var el = document.getElementById(k); if (el && d[k]) el.value = d[k]; }); }
+        } catch(e) {}
+      }
+      loadDraft();
+      if (msgField && msgCount) msgCount.textContent = msgField.value.length + '/500';
+      f.querySelectorAll('input, textarea').forEach(function(el) {
+        el.addEventListener('input', saveDraft);
+      });
+
       f.addEventListener('submit', function(e) {
         e.preventDefault();
         clearErrors();
+
+        /* ── Confirmation check ── */
+        var btn = f.querySelector('button[type=submit]');
+        if (btn._confirming) {
+          btn._confirming = false;
+          btn.textContent = btn._origText;
+        } else {
+          btn._confirming = true;
+          btn._origText = btn.textContent;
+          btn.textContent = '确认提交？';
+          btn.style.background = 'var(--color-accent)';
+          setTimeout(function() {
+            if (btn._confirming) { btn._confirming = false; btn.textContent = btn._origText; btn.style.background = ''; }
+          }, 3000);
+          return;
+        }
+        btn.style.background = '';
+
         var valid = true;
         f.querySelectorAll('input[required], textarea[required]').forEach(function(el) { if (!validateField(el)) valid = false; });
         if (!valid) return;
 
-        var btn = f.querySelector('button[type=submit]');
-        var orig = btn.textContent;
         btn.textContent = '提交中...';
         btn.disabled = true;
+
+        /* ── Timeout after 10s ── */
+        var timedOut = false;
+        var timeoutId = setTimeout(function() {
+          timedOut = true;
+          btn.textContent = '提交超时，请直接添加微信 qianyi-ai';
+          btn.disabled = false;
+          btn.style.background = '';
+        }, 10000);
 
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -513,9 +587,11 @@ import Layout from '../layouts/Layout.astro';
             message: document.getElementById('message').value.trim()
           })
         }).then(function(res) {
+          clearTimeout(timeoutId);
+          if (timedOut) return;
           if (res.ok) {
+            try { localStorage.removeItem(draftKey); } catch(e) {}
             var succ = document.getElementById('form-success');
-            // Smooth hide form rows with animation
             f.querySelectorAll('.form-row').forEach(function(r) {
               r.style.transition = 'opacity 300ms ease, max-height 400ms ease, margin 300ms ease';
               r.style.opacity = '0';
@@ -541,7 +617,9 @@ import Layout from '../layouts/Layout.astro';
             throw new Error('submit failed');
           }
         }).catch(function() {
-          btn.textContent = orig;
+          clearTimeout(timeoutId);
+          if (timedOut) return;
+          btn.textContent = '提交失败，请重试或直接添加微信 qianyi-ai';
           btn.disabled = false;
           var errEl = document.getElementById('form-error');
           errEl.hidden = false;
@@ -568,7 +646,7 @@ import Layout from '../layouts/Layout.astro';
 
     /* ── Back-to-top ── */
     var backBtn = document.getElementById('back-top');
-    var scrollThreshold = 600;
+    var scrollThreshold = 400;
     window.addEventListener('scroll', function() {
       var scrolled = window.scrollY > scrollThreshold;
       backBtn.hidden = !scrolled;
@@ -685,10 +763,10 @@ import Layout from '../layouts/Layout.astro';
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cycleQuery(); }
       });
 
-      // Show hint after a few seconds of idle
+      // Show hint after brief idle
       setTimeout(function() {
         if (mockCycleHint) mockCycleHint.classList.add('visible');
-      }, 4000);
+      }, 1500);
 
       // Hide hint on first interaction, show again after cycle
       mockSearch.addEventListener('click', function() {
@@ -696,7 +774,7 @@ import Layout from '../layouts/Layout.astro';
       }, { once: false });
     }
 
-    /* ── FAQ spring animation ── */
+    /* ── FAQ accordion animation ── */
     var faqDetails = document.querySelectorAll('.faq-item');
     var faqPrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     faqDetails.forEach(function(details) {
@@ -704,60 +782,109 @@ import Layout from '../layouts/Layout.astro';
       var content = details.querySelector('p');
       if (!summary || !content) return;
 
-      if (faqPrefersReduced) return; // let native toggle work, global CSS handles instant transition
+      if (faqPrefersReduced) return;
 
       summary.addEventListener('click', function(e) {
         e.preventDefault();
+
+        if (content._anim) { content._anim.cancel(); content._anim = null; }
+
         var closing = details.open;
-
         if (closing) {
-          // Animate close
-          var startH = content.scrollHeight;
-          content.style.height = startH + 'px';
-          content.style.overflow = 'hidden';
-          content.style.opacity = '1';
-          // Force reflow
-          content.offsetHeight;
-
-          var anim = content.animate([
-            { height: startH + 'px', opacity: 1 },
-            { height: 0, opacity: 0 }
-          ], {
-            duration: 180,
-            easing: 'cubic-bezier(0.2, 0, 0, 1)',
-            fill: 'forwards'
-          });
-          anim.onfinish = function() {
+          content._anim = content.animate(
+            { clipPath: ['inset(0 0 0 0)', 'inset(0 0 100% 0)'], opacity: [1, 0] },
+            { duration: 180, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+          );
+          content._anim.onfinish = function() {
             details.open = false;
-            content.style.height = '';
-            content.style.overflow = '';
+            content.style.clipPath = '';
             content.style.opacity = '';
+            content._anim = null;
           };
         } else {
-          // Animate open
           details.open = true;
-          var endH = content.scrollHeight;
-          content.style.height = '0';
-          content.style.overflow = 'hidden';
-          content.style.opacity = '0';
-          // Force reflow
-          content.offsetHeight;
-
-          var anim = content.animate([
-            { height: 0, opacity: 0 },
-            { height: endH + 'px', opacity: 1 }
-          ], {
-            duration: 250,
-            easing: 'cubic-bezier(0.2, 0, 0, 1)',
-            fill: 'forwards'
-          });
-          anim.onfinish = function() {
-            content.style.height = '';
-            content.style.overflow = '';
+          content._anim = content.animate(
+            { clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0 0)'], opacity: [0, 1] },
+            { duration: 250, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+          );
+          content._anim.onfinish = function() {
+            content.style.clipPath = '';
             content.style.opacity = '';
+            content._anim = null;
           };
         }
       });
+    });
+
+    /* ── FAQ expand/collapse all ── */
+    var faqToggleAll = document.getElementById('faq-toggle-all');
+    if (faqToggleAll) {
+      faqToggleAll.addEventListener('click', function() {
+        var allDetails = document.querySelectorAll('.faq-item');
+        var allOpen = Array.from(allDetails).every(function(d) { return d.open; });
+        allDetails.forEach(function(d) {
+          if (allOpen) {
+            var content = d.querySelector('p');
+            if (content && !faqPrefersReduced) {
+              if (content._anim) { content._anim.cancel(); }
+              content._anim = content.animate(
+                { clipPath: ['inset(0 0 0 0)', 'inset(0 0 100% 0)'], opacity: [1, 0] },
+                { duration: 150, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+              );
+              content._anim.onfinish = function() { d.open = false; content.style.clipPath = ''; content.style.opacity = ''; content._anim = null; };
+            } else { d.open = false; }
+          } else if (!d.open) {
+            d.open = true;
+            var content = d.querySelector('p');
+            if (content && !faqPrefersReduced) {
+              if (content._anim) { content._anim.cancel(); }
+              content._anim = content.animate(
+                { clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0 0)'], opacity: [0, 1] },
+                { duration: 200, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+              );
+              content._anim.onfinish = function() { content.style.clipPath = ''; content.style.opacity = ''; content._anim = null; };
+            }
+          }
+        });
+        faqToggleAll.textContent = allOpen ? '全部展开' : '全部收起';
+      });
+    }
+
+    /* ── Esc to close FAQ items ── */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) {
+          var content = d.querySelector('p');
+          if (content && content._anim) { content._anim.cancel(); content._anim = null; }
+          if (content && !faqPrefersReduced) {
+            if (content._anim) { content._anim.cancel(); }
+            content._anim = content.animate(
+              { clipPath: ['inset(0 0 0 0)', 'inset(0 0 100% 0)'], opacity: [1, 0] },
+              { duration: 120, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+            );
+            content._anim.onfinish = function() {
+              d.open = false;
+              content.style.clipPath = '';
+              content.style.opacity = '';
+              content._anim = null;
+            };
+          } else {
+            d.open = false;
+          }
+        });
+      }
+    });
+
+    /* ── Keyboard shortcuts: Alt+1-5 jump to sections ── */
+    document.addEventListener('keydown', function(e) {
+      if (!e.altKey) return;
+      var map = { '1':'problems', '2':'how', '3':'trust', '4':'faq', '5':'contact' };
+      var target = map[e.key];
+      if (target) {
+        e.preventDefault();
+        var sec = document.getElementById(target);
+        if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+      }
     });
 
 
@@ -878,9 +1005,10 @@ import Layout from '../layouts/Layout.astro';
           el.classList.add('is-revealed');
         }
         if (el.classList.contains('reveal-children')) {
+          var stagger = parseInt(el.getAttribute('data-stagger')) || 25;
           var children = el.querySelectorAll('.reveal-child');
           children.forEach(function(child, i) {
-            child.style.transitionDelay = (i * 25) + 'ms';
+            child.style.transitionDelay = (i * stagger) + 'ms';
             child.classList.add('is-revealed');
           });
         }

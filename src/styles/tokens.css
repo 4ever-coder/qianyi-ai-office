@@ -42,7 +42,7 @@
   --space-16: 4rem;
   --space-24: 6rem;
 
-  --section-pad: clamp(4rem, 8vw, 7rem);
+  --section-pad: clamp(3rem, 6vw, 5rem);
 
   /* ── Radius ── */
   --radius-sm:   0.25rem;

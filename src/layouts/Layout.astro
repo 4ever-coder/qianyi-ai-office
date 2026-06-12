@@ -36,7 +36,10 @@ const { title, description } = Astro.props;
       <rect width="100%" height="100%" filter="url(#ambient-noise-filter)"/>
     </svg>
     <slot />
-  </body>
+  <!-- impeccable-live-start -->
+<script is:inline src="http://localhost:8400/live.js"></script>
+<!-- impeccable-live-end -->
+</body>
 </html>
 <style is:global>
   @import '../styles/global.css';
